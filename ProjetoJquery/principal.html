@@ -6,33 +6,51 @@
     <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="jquery/jquery-validation/js/jquery.validationEngine.js"></script>
-    <script type="text/javascript" src="jquery/jquery-validation/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="jquery/Inputmask-3.x/js/inputmask.js"></script>
     <script type="text/javascript" src="jquery/Inputmask-3.x/js/jquery.inputmask.js"></script>
+    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1/jquery-ui.min.css">
     <script type="text/javascript">
 
         $(document).ready(function() {
 
           $("#nome").val("");
+
           $("#email").val("");
 
-          jQuery.validator.setDefaults({
-            debug: true,
-            success: "valid"
-          });
-          $( "#email" ).validate({
-            rules: {
-              field: {
-                required: true,
-                step: 30
+          $("#email").on("blur", function() {
+
+            var email = $("#email").val();
+
+            console.log(email);
+
+            if(email !== ""){
+
+              var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+              if (!filter.test(email)) {
+                  console.log('Por favor, informe um email válido.');
               }
+
             }
-          });
+
+          }).on("blur");
 
           $("#telefone").inputmask("(99) 9999-9999");
           $("#telefone").val("");
 
+          $("#telefone").on("blur", function() {
+
+            var telefone = $("#telefone").val().replace(/[^\d]+/g,'');
+
+            if(telefone.length < 10){
+              console.log("Número de telefone incorreto");
+            }
+
+          }).on("blur");
+
           $("#data").inputmask("99/99/9999");
           $("#data").val("");
+          $("#data").datepicker();
 
           $("#cep").inputmask("99.999-999");
           $("#cep").val("");
@@ -51,27 +69,24 @@
               console.log("Digita o CEP");
             }
             else {
-              console.log(cep);
+
+  	           $.ajax({
+              		url:'http://viacep.com.br/ws/'+cep+'/json/',
+              		type:'get',
+              		dataType:'json',
+              		crossDomain: true,
+              		data:{
+              			cep: cep,
+              			formato:'json',
+              			chave: ''
+              		},
+              		success: function(data){
+              			$('#endereco').val(data.logradouro + ' - '+ data.complemento + ' - '+ data.bairro + ' - '+ data.localidade);
+              		}
+
+              });
+
             }
-
-            $.getJSON('http://viacep.com.br/ws/'+cep+'/json/', function(data) {
-
-              console.log(data);
-
-              var end;
-
-              console.log(data.logradouro);
-
-              if(typeof data.logradouro == "undefined"){
-                end = 'CEP não existe';
-              }
-              else{
-                end = data.logradouro + ' - '+ data.complemento + ' - '+ data.bairro + ' - '+ data.localidade;
-              }
-
-              $('#endereco').val(end);
-
-            });
 
           }).on("blur");
 
