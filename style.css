@@ -36,11 +36,11 @@ html {
     cursor: pointer;
 }
 
-.menu li:hover .dropdown-menu{
+.menu li:hover .dropdown-menu {
     display: block;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -57,22 +57,44 @@ html {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
-.dropdown-menu li{
+
+.dropdown-menu li {
     width: 100%;
 }
 
-.card{
-    max-width: 300px;
+.card {
+    display: inline-block;
+    max-width: 600px;
     background: #ffffff;
-    padding: 25px;
+    padding: 50px;
+    vertical-align: middle;
+
 }
 
-.row{
+.row {
     display: inline-block;
+    width: 100%;
     margin-bottom: 25px;
+}
+
+.image {
+    display: inline-block;
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin-right: -25px;
+    background-image: url(band.jpg);
+    vertical-align: middle;
+    box-shadow: 0px 0px 12px 2px #ccc;
+    z-index: 1;
+}
+
+.image:nth-child(2) {
+    margin: 0px;
+    margin-left: -25px;
 }
