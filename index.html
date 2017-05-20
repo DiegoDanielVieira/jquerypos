@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Site Jquery</title>
-  <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/jquery-validation/js/jquery.validationEngine.js"></script>
   <script type="text/javascript" src="js/Inputmask-3.x/js/inputmask.js"></script>
@@ -13,13 +13,16 @@
   <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css">
   <script type="text/javascript" src="js/owl.carousel.js"></script>
   <script type="text/javascript" src="js/owl.autoplay.js"></script>
+  <script type="text/javascript" src="js/jphotogrid.js"></script>
+  <script type="text/javascript" src="js/setup.js"></script>
   <link rel="stylesheet" href="css/owl.carousel.css">
   <link rel="stylesheet" href="css/owl.theme.default.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jphotogrid.css">
+  <link rel="stylesheet" href="css/jphotogrid.ie.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <script type="text/javascript">
     $(document).ready(function() {
-
 
       $("#nome").val("");
 
@@ -34,9 +37,9 @@
           var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
           if (!filter.test(email)) {
-              $(this).after('<span id="msg-email" class="alert">Por favor, informe um email válido.</span>');
-          }else{
-              $('#msg-email').remove();
+            $(this).after('<span id="msg-email" class="alert">Por favor, informe um email válido.</span>');
+          } else {
+            $('#msg-email').remove();
           }
 
         }
@@ -52,9 +55,8 @@
 
         if (telefone.length < 10) {
           $(this).after('<span id="msg-tel" class="alert">Número de telefone incorreto.</span>');
-        }
-        else{
-            $('#msg-tel').remove();
+        } else {
+          $('#msg-tel').remove();
         }
 
       }).on("blur");
@@ -77,8 +79,7 @@
 
         if (cep == "") {
           $('#endereco').after('<span id="msg-cep" class="alert">Digita o CEP.</span>');
-        }
-        else {
+        } else {
 
           $('#msg-cep').remove();
 
@@ -119,7 +120,7 @@
 </head>
 
 <body>
-  <div class="topo">
+  <div class="topo" id="cabecalho">
     <div class="container">
       <div class="logo-area">
         <div class="logo">
@@ -187,7 +188,7 @@
       </div>
     </div>
 
-    <div name="div-form" style="background-color:white; height:400px; margin-top:5px;"><br>
+    <div style="background-color:white; height:400px; margin-top:5px;"><br>
       <form action="principal.html" style="margin-left:50px;" method="post">
         <h2>Contato</h2><br>
         <input type="text" id="nome" value="" placeholder="Digite o Nome"><br><br>
@@ -200,7 +201,60 @@
       </form>
     </div>
 
+    <div style="height:600px;">
+      <h3>Galeria</h3>
+
+      <ul id="pg" style="height:245px;">
+        <li>
+          <img src="http://www.clickgratis.com.br/fotos-imagens/carros/aHR0cHM6Ly9zLW1lZGlhLWNhY2hlLWFrMC5waW5pbWcuY29tL29yaWdpbmFscy8xYy9jNS85Yi8xY2M1OWI4OGUzYTg0MmY3NDc3ZDg2M2UxM2RkOTRiOC5qcGc=.jpg" alt="img1">
+          <p>img1</p>
+        </li>
+        <li>
+          <img src="http://www.clickgratis.com.br/fotos-imagens/carros/aHR0cDovL3d3dy5jbGlja2dyYXRpcy5jb20uYnIvZm90b3MtaW1hZ2Vucy9mb3Rvcy1kZS1jYXJyb3MvYUhSMGNEb3ZMM2QzZHk1allYSnliM05xWVM1amIyMHZjR0Z3Wld3dGNHRnlaV1JsTDJOaGNuSnZjeTEzWVd4c2NHRndaWEl0TVRFdWFuQm4uanBn.jpg" alt="img2">
+          <p>img1</p>
+        </li>
+        <li>
+          <img src="http://www.clickgratis.com.br/fotos-imagens/carros/aHR0cDovL3d3dy5zY3JhcHNkaW5hbWljb3MuY29tLmJyL2ltYWdlbnMvZnJhc2VzLWZvdG8tZGUtY2Fycm9zLTE1LmpwZw==.jpg" alt="img3">
+          <p>img3</p>
+        </li>
+        <li>
+          <img src="https://imgnzn-a.akamaized.net/2016/05/18/18114528280110.jpg" alt="img4">
+          <p>img4</p>
+        </li>
+        <li>
+          <img src="http://1.bp.blogspot.com/-18jZai7up5Y/VHX9MGH18iI/AAAAAAAACVo/NPO3YJcYBjQ/s1600/160.JPG" alt="img5">
+          <p>img5</p>
+        </li>
+        <li>
+          <img src="http://cdn-motorshow.terra.com.br/wp-content/uploads/sites/2/2015/12/9_1600x1067.jpg" alt="img6">
+          <p>img6</p>
+        </li>
+        <li>
+          <img src="http://www.clickgratis.com.br/fotos-imagens/fotos-de-carros/aHR0cDovL3d3dy5jbGlja2dyYXRpcy5jb20uYnIvZm90b3MtaW1hZ2Vucy9mb3Rvcy1kZS1jYXJyb3MvYUhSMGNITTZMeTl6TFcxbFpHbGhMV05oWTJobExXRnJNQzV3YVc1cGJXY3VZMjl0TDI5eWFXZHBibUZzY3k5aU5DODRPUzh6TlM5aU5EZzVNelV4WXpsaFlUazRaRE0wTldVNU4yVTBNekU0WldZNFpUaGpOQzVxY0djPS5qcGc=.jpg" alt="img7">
+          <p>img7</p>
+        </li>
+        <li>
+          <img src="http://curiosando.com.br/wp-content/uploads/2015/09/2017-Bugatti-Veyron-Super-Sport-carro-mais-rapido.jpg" alt="img8">
+          <p>img8</p>
+        </li>
+        <li>
+          <img src="http://blog.canaldapeca.com.br/wp-content/uploads/2015/06/Conhe%C3%A7a-7-inova%C3%A7%C3%B5es-dos-carros-do-futuro-1-800x516.jpg" alt="img9">
+          <p>img9</p>
+        </li>
+        <li>
+          <img src="http://www.clickgratis.com.br/fotos-imagens/carros/aHR0cDovL3d3dy5zY3JhcHNkaW5hbWljb3MuY29tLmJyL2ltYWdlbnMvZnJhc2VzLWZvdG8tZGUtY2Fycm9zLTE1LmpwZw==.jpg" alt="img10">
+          <p>img10</p>
+        </li>
+
+      </ul>
+
+    </div>
+
   </div>
+
+    <div class="rodape" align="center" style="height:50px;">
+      <a href="#cabecalho" id="top">Retornar ao Topo</a>
+    </div>
 </body>
 
 </html>
