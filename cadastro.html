@@ -5,10 +5,16 @@
   <meta charset="utf-8">
   <title>Site Jquery</title>
   <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery-validation/js/jquery.validationEngine.js"></script>
+  <script type="text/javascript" src="js/Inputmask-3.x/js/inputmask.js"></script>
+  <script type="text/javascript" src="js/Inputmask-3.x/js/jquery.inputmask.js"></script>
+  <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css">
   <script type="text/javascript" src="owl.carousel.js"></script>
-  <link rel="stylesheet" href="owl.carousel.css">
-  <link rel="stylesheet" href="owl.theme.default.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link rel="stylesheet" href="css/owl.theme.default.css">
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <script type="text/javascript">
       $(document).ready(function() {
@@ -65,9 +71,9 @@
 
   <div class="slider">
     <div class="owl-carousel">
-      <div> <img src="foto1.jpg" alt=""></div>
-      <div> <img src="foto2.jpg" alt=""></div>
-      <div> <img src="foto1.jpg" alt=""></div>
+      <div> <img src="imagem/foto1.jpg" alt=""></div>
+      <div> <img src="imagem/foto2.jpg" alt=""></div>
+      <div> <img src="imagem/foto1.jpg" alt=""></div>
     </div>
   </div>
 
@@ -131,6 +137,20 @@
         </div>
       </div>
     </div>
+
+    <div name="div-form" style="background-color:white; height:350px; margin-top:5px;"><br>
+      <form action="principal.html" style="margin-left:50px;" method="post">
+        <h2>Preencha o Contato</h2><br>
+        <input type="text" id="nome" value="" placeholder="Digite o Nome"><br><br>
+        <input type="text" id="email" value="" placeholder="Digite o Email"><br><br>
+        <input type="numeric" id="telefone" value="" placeholder="Digite o Telefone"><br><br>
+        <input type="date" id="data" value="" placeholder="Digite a Data"><br><br>
+        <input type="numeric" id="cep" value="" placeholder="Digite o CEP">
+        <input type="text" style="width:550px;" id="endereco" value=""><br><br>
+        <button type="button" name="enviar">Enviar</button>
+      </form>
+    </div>
+
   </div>
 </body>
 </html>
