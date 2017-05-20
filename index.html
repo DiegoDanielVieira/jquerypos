@@ -3,81 +3,38 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Siste</title>
+  <title>Site Jquery</title>
   <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
   <script type="text/javascript" src="owl.carousel.js"></script>
   <link rel="stylesheet" href="owl.carousel.css">
   <link rel="stylesheet" href="owl.theme.default.css">
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <style media="screen">
-    body,
-    html {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: #fafafa;
-      font-family: 'Lato', sans-serif;
-    }
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.owl-carousel').owlCarousel({
+              loop:true,
+              margin:10,
+              autoplay:true,
+              autoplayTimeout:1000,
+              autoplayHoverPause:true,
+              responsiveClass: true,
+              responsive: {
 
-    .logo {
-      display: inline-block;
-    }
+                  1000: {
+                      items: 1,
+                      nav: true,
+                      loop: false
+                  }
+              }
+          })
+      });
 
-    .container {
-      margin: 0 auto;
-      width: 900px;
-    }
+      $('.menu li').on('mouseover', function () {
+          alert(this);
+      });
 
-    .topo {
-      background: #fff;
-    }
-
-    .menu {
-      display: inline-block;
-    }
-
-    .menu li {
-      display: inline-block;
-      position: relative;
-      padding: 10px 15px;
-    }
-
-    .menu li:hover {
-      background: #ccc;
-      cursor: pointer;
-    }
-
-    .menu li:hover .dropdown-menu{
-      display: block;
-    }
-
-    .dropdown-menu{
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 1000;
-      display: none;
-      float: left;
-      min-width: 160px;
-      padding: 5px 0;
-      margin: 2px 0 0;
-      font-size: 14px;
-      text-align: left;
-      list-style: none;
-      background-color: #fff;
-      -webkit-background-clip: padding-box;
-      background-clip: padding-box;
-      border: 1px solid #ccc;
-      border: 1px solid rgba(0,0,0,.15);
-      border-radius: 4px;
-      -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-      box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    }
-    .dropdown-menu li{
-      width: 100%;
-    }
-  </style>
+  </script>
 </head>
 
 <body>
@@ -113,33 +70,68 @@
   </div>
 
   <div class="container conteudo">
-    <div class="">
-      
+    <div class="conteudo">
+      <div class="row">
+        <div class="image">
+        </div>
+        <div class="card">
+          <h2>New Band</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Etiam iaculis hendrerit
+            sapien vel ornare. Donec in purus mollis,
+            luctus libero at, varius risus.
+            Mauris et est scelerisque, luctus nisi eget, aliquet urna.
+            Suspendisse consectetur urna quis dolor fermentum,
+            ut placerat libero iaculis. Pellentesque mollis mauris eros,
+            vitae fermentum justo congue eget. Cras dignissim,
+            ligula in fermentum placerat, neque felis dapibus enim,
+            tincidunt sagittis libero nulla non urna.
+            Phasellus accumsan nunc rhoncus, tincidunt diam quis,
+            auctor quam. Nullam mollis consequat dignissim. Proin id ligula diam.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="image">
+        </div>
+        <div class="card">
+          <h2>New Band</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Etiam iaculis hendrerit
+            sapien vel ornare. Donec in purus mollis,
+            luctus libero at, varius risus.
+            Mauris et est scelerisque, luctus nisi eget, aliquet urna.
+            Suspendisse consectetur urna quis dolor fermentum,
+            ut placerat libero iaculis. Pellentesque mollis mauris eros,
+            vitae fermentum justo congue eget. Cras dignissim,
+            ligula in fermentum placerat, neque felis dapibus enim,
+            tincidunt sagittis libero nulla non urna.
+            Phasellus accumsan nunc rhoncus, tincidunt diam quis,
+            auctor quam. Nullam mollis consequat dignissim. Proin id ligula diam.</p>
+        </div>
+        <div class="row">
+          <div class="image">
+          </div>
+          <div class="card">
+            <h2>New Band</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Etiam iaculis hendrerit
+              sapien vel ornare. Donec in purus mollis,
+              luctus libero at, varius risus.
+              Mauris et est scelerisque, luctus nisi eget, aliquet urna.
+              Suspendisse consectetur urna quis dolor fermentum,
+              ut placerat libero iaculis. Pellentesque mollis mauris eros,
+              vitae fermentum justo congue eget. Cras dignissim,
+              ligula in fermentum placerat, neque felis dapibus enim,
+              tincidunt sagittis libero nulla non urna.
+              Phasellus accumsan nunc rhoncus, tincidunt diam quis,
+              auctor quam. Nullam mollis consequat dignissim. Proin id ligula diam.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('.owl-carousel').owlCarousel({
-        loop: true,
-        autoplay: true,
-        responsiveClass: true,
-        responsive: {
 
-          1000: {
-            items: 1,
-            nav: true,
-            loop: false
-          }
-        }
-      })
-    });
-
-    $('.menu li').on('mouseover', function () {
-
-    });
-
-  </script>
 
 </body>
 
